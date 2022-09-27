@@ -3,22 +3,53 @@
 <head>
 	<title>Threads</title>
 	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 		html, * {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
+			user-select: none;
+		}
+
+		body {
+			height: 100vh;
+		}
+
+		.main {
+			height: 90vh;
 		}
 
 		.header {
-			color: rgb(18, 18, 128);
-			text-align: center;
-			line-height: 60px;
+			color: rgb(18, 18, 18);
+			border: 1px solid black;
+			padding: 5px;
 		}
 
-		.header h2, p {
-			margin: 0;
-			padding: 0;
-			padding-bottom: 10px;
+		.title {
+			font-size: 48px;
+			padding: 10px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.info {
+			padding-left: 14px;
+			margin-top: -5px;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.left {
+			width: 70%;
+			min-height: 100%;
+			border: 1px solid black;
+			padding: 10px;
+		}
+
+		.right {
+			width: 30%
+			height: 100%;
+			border: 1px solid black;
+			padding: 10px;
 		}
 
 		.post {
@@ -39,24 +70,31 @@
 <body>
 	<div class="main">
 		<div class="header">
-			<h2>Threads</h2>
-			<p>Chat for free using threads</p>
+			<h2 class="title">Threads</h2>
+			<p class="info">Chat for free, Anonymously</p>
 		</div>
 
-		<div class="posts">
+		<div class="left">
+			<div class="posts">
+			</div>
+
+			<div class="formbox">
+				<form action="/post" method="POST">
+					<div>
+						<input type="text" name="username" placeholder="username" autocomplete="off">
+					</div>
+					<div>
+						<textarea name="content" placeholder="Enter post" rows="3" cols="30"> </textarea>
+					</div>
+					<input type="submit" name="submit" class="submit">
+				</form>
+			</div>
 		</div>
 
-		<div class="formbox">
-			<form action="/post" method="POST">
-				<div>
-					<input type="text" name="username" placeholder="username" autocomplete="off">
-				</div>
-				<div>
-					<textarea name="content" placeholder="Enter post" rows="3" cols="30"> </textarea>
-				</div>
-				<input type="submit" name="submit" class="submit">
-			</form>
+		<div class="right">
+			
 		</div>
+		
 	</div>
 
 	<script type="text/javascript">

@@ -22,7 +22,6 @@ def login():
 		if username and password:
 			if authenticate_user(username, password):
 				session["username"] = username
-				# return redirect(url_for("postpage"), username=session["username"])
 				return render_template("redirectLogin.html", username=session["username"])
 			else:
 				return render_template("login.html", msg="error")
